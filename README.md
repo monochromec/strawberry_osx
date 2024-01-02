@@ -5,7 +5,7 @@ This script allows the automated creation of Strawberry builds on Apple Silicon/
 
 Essentially, it's packaged version of the original [wiki page](https://wiki.strawberrymusicplayer.org/wiki/Compile_macOS_using_homebrew). 
 The idea is to have a tooling available for the generation of avoiding the mandatory fee imposed by the [original project](https://www.strawberrymusicplayer.org/#download) 
-for OSX builds. I'll publish the corresponing app zips / dmgs 
+for OSX builds. I'll publish the corresponing app zips / dmgs.
 
 At the moment, only zipped app bundles are supported which require an installed Qt6 via Homebrew among other things. As deployment (ie. bundling of the required frameworks
 and libraries in the app tree itself) and subsequent dmg creation require codesigning, I'll update the script once I've solved the current codesigning issues (PRs / hints are
@@ -20,6 +20,6 @@ Prereqs:
 Caveats:
 - macdeployqt does not handle relative linker paths well, the script incorporates a modified version of the [original script](https://wiki.strawberrymusicplayer.org/wiki/Compile_macOS_using_homebrew) to fix this,
 - The [original recipe](https://wiki.strawberrymusicplayer.org/wiki/Compile_macOS_using_homebrew) leans towards Intel-based Macs (ie, location of Homebrew), the packaged version addresses this by properly prefixing. I've tested this primarily on Apple Silicon, it should also work on older Intel-based Macs (please open an issue if it doesn't),
-- There may be additional issues arising from a full-blown deployments, PRs are welcome,
+- There may be additional issues arising from a full-blown deployment, PRs are welcome,
 - This project is very much __WiP/beta__ (for example, a full-blown deployment doesn't work yet), so proceed at your own risk!
 
